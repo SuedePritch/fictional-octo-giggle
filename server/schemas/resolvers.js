@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Book } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -51,7 +51,6 @@ Query: {
     
       // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
         if (context.user) {
-            console.log(content)
         return User.findOneAndUpdate(
             { _id: context.user._id },
             {
@@ -66,6 +65,19 @@ Query: {
       // If user attempts to execute this mutation and isn't logged in, throw an error
         throw new AuthenticationError('You need to be logged in!');
     },
+    removeBook: async (parent, { bookId }, context) => {
+        console.log(bookId)
+        if (context.user) {
+            const book = await User.findOneAndUpdate(
+            { _id: context.user._id },
+            { $pull: { savedBooks: {bookId} } }
+            );
+                console.log(book)
+            return book;
+        }
+        throw new AuthenticationError('You need to be logged in!');
+        },
+
     },
 };
 
