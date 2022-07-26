@@ -12,6 +12,7 @@ import { setContext } from '@apollo/client/link/context';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
+require('dotenv').config();
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
