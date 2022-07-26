@@ -7,8 +7,11 @@ Query: {
     testUserDeleteMe: async (parent)=>{
         return User.find({})
     },
-    me: async (parent, context) => {
-        console.log(context)
+    me: async (parent, {_id }, context) => {
+
+        console.warn("🚀 --------------------------------------------------------------------🚀")
+        console.warn("🚀 ~ file: resolvers.js ~ line 12 ~ me: ~ context.user", context.user)
+        console.warn("🚀 --------------------------------------------------------------------🚀")
         if (context.user) {
         return User.findOne({
             _id: context.user._id 
