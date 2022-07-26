@@ -7,11 +7,8 @@ Query: {
     testUserDeleteMe: async (parent)=>{
         return User.find({})
     },
-    me: async (parent, {_id }, context) => {
-
-        console.warn("🚀 --------------------------------------------------------------------🚀")
-        console.warn("🚀 ~ file: resolvers.js ~ line 12 ~ me: ~ context.user", context.user)
-        console.warn("🚀 --------------------------------------------------------------------🚀")
+    me: async (parent, { _id }, context) => {
+    
         if (context.user) {
         return User.findOne({
             _id: context.user._id 
@@ -50,13 +47,15 @@ Query: {
         const token = signToken(user);
         return { token, user };
     },
-    saveBook: async (parent, { saveBook }, context) => {
+    saveBook: async (parent, { content }, context) => {
+    
       // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
         if (context.user) {
+            console.log(content)
         return User.findOneAndUpdate(
             { _id: context.user._id },
             {
-            $addToSet: { savedBooks: saveBook },
+            $addToSet: { savedBooks: content },
             },
             {
             new: true,
