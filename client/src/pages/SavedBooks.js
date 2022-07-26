@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
+import { Jumbotron, Container, CardColumns, Card } from 'react-bootstrap';
 
 import { useQuery } from '@apollo/client';
 import {GET_ME} from '../utils/queries'
@@ -8,11 +8,14 @@ import {GET_ME} from '../utils/queries'
 // import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  const {loading, data} = useQuery(GET_ME);
-  let userData = [];
-  if(!loading){
+  let userData;
+  const {loading, error, data} = useQuery(GET_ME);
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+  if(!loading && !error){
     userData = data.me
-    console.log(userData.savedBooks)
+    console.log(userData)
+
   }
   
   
@@ -77,6 +80,7 @@ const SavedBooks = () => {
 
   return (
     <>
+    <h1>saved books</h1>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
           <h1>Viewing saved books!</h1>
