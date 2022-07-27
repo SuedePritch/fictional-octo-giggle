@@ -15,7 +15,7 @@ import Navbar from './components/Navbar';
 require('dotenv').config();
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: 'https://fictional-octo-giggle.herokuapp.com/graphql',
   cache: new InMemoryCache(),
 });
 
