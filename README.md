@@ -3,7 +3,7 @@
 ### Description
 This app was orignally a MERN stack app using a REST API which has now been converted to a GraphQL API using Apollo on both the client and server side. 
 
-[Live Site](https://github.com/SuedePritch/fictional-octo-giggle)
+[Live Site](https://fictional-octo-giggle.herokuapp.com/)
 ### Installation
 install dependancies
 
