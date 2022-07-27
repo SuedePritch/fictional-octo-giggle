@@ -23,7 +23,6 @@ start server and client
 * Node
 * MongoDB
 
-![](src/images/about_screenshot.png)
-![](src/images/portfolio_screenshot.png)
-![](src/images/contact_screenshot.png)
-![](src/images/resume_screenshot.png)
+![](landing_screenshot.png)
+![](search_screenshot.png)
+![](saved_screenshot.png)
