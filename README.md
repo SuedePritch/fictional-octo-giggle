@@ -3,7 +3,7 @@
 ### Description
 This app was orignally a MERN stack app using a REST API which has now been converted to a GraphQL API using Apollo on both the client and server side. 
 
-[Live Site](https://github.com/SuedePritch/fictional-octo-giggle)
+[Live Site](https://fictional-octo-giggle.herokuapp.com/)
 ### Installation
 install dependancies
 
@@ -14,7 +14,7 @@ start server and client
     npm run develop
 
 ### Contributions
-[Issues and Pull requests can be made to this repo]https://github.com/SuedePritch/fictional-octo-giggle)
+[Issues and Pull requests can be made to this repo](https://github.com/SuedePritch/fictional-octo-giggle)
 
 ### Technology
 * React
@@ -23,6 +23,8 @@ start server and client
 * Node
 * MongoDB
 
+
 ![](landing_screenshot.png)
 ![](search_screenshot.png)
 ![](saved_screenshot.png)
+
