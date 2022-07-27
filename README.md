@@ -14,7 +14,7 @@ start server and client
     npm run develop
 
 ### Contributions
-[Issues and Pull requests can be made to this repo]https://github.com/SuedePritch/fictional-octo-giggle)
+[Issues and Pull requests can be made to this repo](https://github.com/SuedePritch/fictional-octo-giggle)
 
 ### Technology
 * React
